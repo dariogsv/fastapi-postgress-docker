@@ -1,0 +1,6 @@
+2025-05-29 02:33:13.094 -03 [41676] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+2025-05-29 02:33:13.098 -03 [41676] LOG:  could not bind IPv6 address "::1": Permission denied
+2025-05-29 02:33:13.099 -03 [41676] LOG:  could not bind IPv4 address "127.0.0.1": Permission denied
+2025-05-29 02:33:13.099 -03 [41676] WARNING:  could not create listen socket for "localhost"
+2025-05-29 02:33:13.099 -03 [41676] FATAL:  could not create any TCP/IP sockets
+2025-05-29 02:33:13.100 -03 [41676] LOG:  database system is shut down

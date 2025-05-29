@@ -1,0 +1,19 @@
+## Setup e configuração do projeto
+
+### Pré-requisitos
+Para rodar o projeto, você precisa ter instalado em sua máquina:
+- Python 3.7 ou superior
+- PostgreSQL 12 ou superior
+
+### Instalação e execução
+1. Clone o repositório:    git clone https://github.com/yourusername/vitra_challenge.git
+2. Entre na pasta do projeto: cd vitra_challenge
+3. Crie um ambiente virtual: python -m venv venv
+4. Ative o ambiente virtual: source venv/bin/activate (Linux/Mac) ou venv\Scripts\activate (Windows)
+5. Instale as dependências: pip install -r requirements.txt
+6. Crie uma database no PostgreSQL
+7. Configure as variáveis de ambiente: cp .env.example .env e preencha as variáveis de ambiente
+
+
+
+
