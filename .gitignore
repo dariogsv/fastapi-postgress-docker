@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+ENV/
+.Python
+*.sqlite3
+db.sqlite3
+
+# Environment variables
+.env
+.env.*
+
+# VSCode
+.vscode/
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Docker
+*.log
+docker-compose.override.yml
+docker-compose.*.yml
+.docker/
+docker.env
+
+# AWS SAM/CloudFormation
+.aws-sam/
+.aws/
+*.template.yaml
+*.template.yml
+samconfig.toml
+
+# Build
+build/
+dist/
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# Node (for docs or frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Documentation
+docs/_build/
+site/
+*.swagger.json
+*.openapi.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test output
+test-results/
+junit-*.xml
+
+# Misc
+*.bak
+*.tmp
+*.swp
+*.swo
+.idea/
+*.iml
