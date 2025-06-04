@@ -4,3 +4,123 @@
 2025-05-29 02:33:13.099 -03 [41676] WARNING:  could not create listen socket for "localhost"
 2025-05-29 02:33:13.099 -03 [41676] FATAL:  could not create any TCP/IP sockets
 2025-05-29 02:33:13.100 -03 [41676] LOG:  database system is shut down
+2025-05-29 21:08:09.577 -03 [12460] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+2025-05-29 21:08:09.582 -03 [12460] LOG:  could not bind IPv6 address "::1": Permission denied
+2025-05-29 21:08:09.582 -03 [12460] LOG:  could not bind IPv4 address "127.0.0.1": Permission denied
+2025-05-29 21:08:09.583 -03 [12460] WARNING:  could not create listen socket for "localhost"
+2025-05-29 21:08:09.583 -03 [12460] FATAL:  could not create any TCP/IP sockets
+2025-05-29 21:08:09.584 -03 [12460] LOG:  database system is shut down
+2025-05-29 21:10:58.918 -03 [18892] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+2025-05-29 21:10:58.924 -03 [18892] LOG:  listening on IPv6 address "::1", port 5432
+2025-05-29 21:10:58.925 -03 [18892] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-05-29 21:10:59.031 -03 [30000] LOG:  database system was shut down at 2025-05-29 20:45:58 -03
+2025-05-29 21:10:59.091 -03 [18892] LOG:  database system is ready to accept connections
+2025-05-29 21:11:11.044 -03 [24376] ERROR:  canceling statement due to user request
+2025-05-29 21:11:11.049 -03 [18892] LOG:  received fast shutdown request
+2025-05-29 21:11:11.086 -03 [18892] LOG:  aborting any active transactions
+2025-05-29 21:11:11.087 -03 [18892] LOG:  background worker "logical replication launcher" (PID 24376) exited with exit code 1
+2025-05-29 21:11:11.091 -03 [32668] LOG:  shutting down
+2025-05-29 21:11:11.131 -03 [32668] LOG:  checkpoint starting: shutdown immediate
+2025-05-29 21:11:11.209 -03 [32668] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.043 s, total=0.118 s; sync files=2, longest=0.038 s, average=0.022 s; distance=0 kB, estimate=0 kB; lsn=0/1572DB0, redo lsn=0/1572DB0
+2025-05-29 21:11:11.216 -03 [18892] LOG:  database system is shut down
+2025-05-29 21:11:17.105 -03 [14388] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+2025-05-29 21:11:17.110 -03 [14388] LOG:  listening on IPv6 address "::1", port 5432
+2025-05-29 21:11:17.110 -03 [14388] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-05-29 21:11:17.199 -03 [37384] LOG:  database system was shut down at 2025-05-29 21:11:11 -03
+2025-05-29 21:11:17.237 -03 [14388] LOG:  database system is ready to accept connections
+2025-05-29 21:11:29.673 -03 [32092] FATAL:  role "postgre" does not exist
+2025-05-29 21:16:17.202 -03 [8552] LOG:  checkpoint starting: time
+2025-05-29 21:16:22.847 -03 [8552] LOG:  checkpoint complete: wrote 48 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.926 s, sync=0.072 s, total=5.645 s; sync files=11, longest=0.017 s, average=0.007 s; distance=288 kB, estimate=288 kB; lsn=0/15BAF18, redo lsn=0/15BAE88
+2025-05-29 23:26:38.831 -03 [6524] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+2025-05-29 23:26:38.835 -03 [6524] LOG:  could not bind IPv6 address "::1": Permission denied
+2025-05-29 23:26:38.835 -03 [6524] LOG:  could not bind IPv4 address "127.0.0.1": Permission denied
+2025-05-29 23:26:38.835 -03 [6524] WARNING:  could not create listen socket for "localhost"
+2025-05-29 23:26:38.835 -03 [6524] FATAL:  could not create any TCP/IP sockets
+2025-05-29 23:26:38.837 -03 [6524] LOG:  database system is shut down
+2025-05-29 23:28:23.291 -03 [25308] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+2025-05-29 23:28:23.295 -03 [25308] LOG:  could not bind IPv6 address "::1": Permission denied
+2025-05-29 23:28:23.295 -03 [25308] LOG:  could not bind IPv4 address "127.0.0.1": Permission denied
+2025-05-29 23:28:23.295 -03 [25308] WARNING:  could not create listen socket for "localhost"
+2025-05-29 23:28:23.295 -03 [25308] FATAL:  could not create any TCP/IP sockets
+2025-05-29 23:28:23.297 -03 [25308] LOG:  database system is shut down
+2025-05-29 23:29:20.645 -03 [4956] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+2025-05-29 23:29:20.650 -03 [4956] LOG:  listening on IPv6 address "::1", port 5432
+2025-05-29 23:29:20.651 -03 [4956] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-05-29 23:29:20.783 -03 [31748] LOG:  database system was interrupted; last known up at 2025-05-29 21:16:22 -03
+2025-05-29 23:29:30.803 -03 [31748] LOG:  syncing data directory (fsync), elapsed time: 10.01 s, current path: ./base/4/2617
+2025-05-29 23:29:40.801 -03 [31748] LOG:  syncing data directory (fsync), elapsed time: 20.01 s, current path: ./global/2695
+2025-05-29 23:29:42.014 -03 [31748] LOG:  database system was not properly shut down; automatic recovery in progress
+2025-05-29 23:29:42.050 -03 [31748] LOG:  redo starts at 0/15BAE88
+2025-05-29 23:29:42.050 -03 [31748] LOG:  invalid record length at 0/15BAFC8: expected at least 24, got 0
+2025-05-29 23:29:42.050 -03 [31748] LOG:  redo done at 0/15BAF90 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2025-05-29 23:29:42.081 -03 [24660] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-05-29 23:29:42.157 -03 [24660] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.021 s, total=0.107 s; sync files=2, longest=0.011 s, average=0.011 s; distance=0 kB, estimate=0 kB; lsn=0/15BAFC8, redo lsn=0/15BAFC8
+2025-05-29 23:29:42.186 -03 [4956] LOG:  database system is ready to accept connections
+2025-05-29 23:50:02.398 -03 [23928] FATAL:  database "vitra_hub" does not exist
+2025-05-30 00:01:46.452 -03 [10140] ERROR:  syntax error at or near "status" at character 1
+2025-05-30 00:01:46.452 -03 [10140] STATEMENT:  status
+	/h
+	create table 
+	create table
+	list table
+	show
+	show 
+	create database vitra_hub
+	CREATE DATABASE
+	show vitra_hub
+	select version()
+	
+	select version()
+	SELECT version()
+	SELECT version();
+2025-05-30 00:03:42.304 -03 [31176] FATAL:  database "mydatabase" does not exist
+2025-05-30 00:04:23.255 -03 [10140] ERROR:  syntax error at or near ";" at character 18
+2025-05-30 00:04:23.255 -03 [10140] STATEMENT:  create table test;
+2025-05-30 00:04:46.455 -03 [10140] ERROR:  syntax error at or near "create" at character 19
+2025-05-30 00:04:46.455 -03 [10140] STATEMENT:  create table test
+	create table test;
+2025-05-30 00:04:48.280 -03 [10140] ERROR:  syntax error at or near ";" at character 19
+2025-05-30 00:04:48.280 -03 [10140] STATEMENT:  create table test ;
+2025-05-30 00:04:53.893 -03 [10140] ERROR:  syntax error at or near ";" at character 20
+2025-05-30 00:04:53.893 -03 [10140] STATEMENT:  create table "test";
+2025-05-30 00:05:03.806 -03 [10140] ERROR:  syntax error at or near ";" at character 18
+2025-05-30 00:05:03.806 -03 [10140] STATEMENT:  CREATE TABLE test;
+2025-05-30 00:05:33.255 -03 [6948] FATAL:  database "postgre" does not exist
+2025-05-30 00:06:21.482 -03 [26180] ERROR:  syntax error at or near "create" at character 19
+2025-05-30 00:06:21.482 -03 [26180] STATEMENT:  CREATE TABLE test
+	create table test
+	create table test;
+2025-05-30 00:06:35.670 -03 [26180] ERROR:  syntax error at or near "CREATE" at character 19
+2025-05-30 00:06:35.670 -03 [26180] STATEMENT:  CREATE TABLE test
+	CREATE TABLE test;
+2025-05-30 00:07:55.758 -03 [26180] ERROR:  syntax error at or near "CREATE" at character 14
+2025-05-30 00:07:55.758 -03 [26180] STATEMENT:  CREATE TABLE
+	CREATE TABLE;
+2025-05-30 00:08:20.859 -03 [26180] ERROR:  syntax error at or near "as" at character 14
+2025-05-30 00:08:20.859 -03 [26180] STATEMENT:  CREATE TABLE as test
+	CREATE TABLE as test;
+2025-05-30 00:08:26.284 -03 [26180] ERROR:  syntax error at or near "AS" at character 14
+2025-05-30 00:08:26.284 -03 [26180] STATEMENT:  CREATE TABLE AS test;
+2025-05-30 00:09:05.226 -03 [16468] FATAL:  database "test" does not exist
+2025-05-30 00:09:13.399 -03 [23928] FATAL:  database "test" does not exist
+2025-05-30 00:24:42.722 -03 [4956] LOG:  could not reserve shared memory region (addr=000002802E290000) for child 00000000000014A8: error code 487
+2025-05-30 00:39:46.468 -03 [4956] LOG:  server process (PID 26180) was terminated by exception 0xC000013A
+2025-05-30 00:39:46.468 -03 [4956] DETAIL:  Failed process was running: CREATE TABLE AS test;
+2025-05-30 00:39:46.468 -03 [4956] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2025-05-30 00:39:46.468 -03 [4956] LOG:  terminating any other active server processes
+2025-05-30 00:39:46.481 -03 [4956] LOG:  all server processes terminated; reinitializing
+^C2025-05-31 03:58:52.474 -03 [2992] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+2025-05-31 03:58:52.478 -03 [2992] LOG:  listening on IPv6 address "::1", port 5432
+2025-05-31 03:58:52.479 -03 [2992] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-05-31 03:58:52.559 -03 [31124] LOG:  database system was shut down at 2025-05-31 03:39:25 -03
+2025-05-31 03:58:52.605 -03 [2992] LOG:  database system is ready to accept connections
+2025-05-31 04:03:52.561 -03 [38128] LOG:  checkpoint starting: time
+2025-05-31 04:03:53.235 -03 [38128] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.027 s, total=0.674 s; sync files=2, longest=0.023 s, average=0.014 s; distance=0 kB, estimate=0 kB; lsn=0/16072D8, redo lsn=0/1607280
+2025-05-31 04:13:55.123 -03 [2992] LOG:  autovacuum launcher process (PID 152300) was terminated by exception 0x40010004
+2025-05-31 04:13:55.123 -03 [2992] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2025-05-31 04:13:55.123 -03 [2992] LOG:  terminating any other active server processes
+2025-05-31 04:13:55.153 -03 [2992] LOG:  all server processes terminated; reinitializing
+2025-05-31 04:13:55.292 -03 [2992] LOG:  startup process (PID 88268) was terminated by exception 0xC000026B
+2025-05-31 04:13:55.292 -03 [2992] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2025-05-31 04:13:55.292 -03 [2992] LOG:  aborting startup due to startup process failure
+2025-05-31 04:13:55.294 -03 [2992] LOG:  database system is shut down

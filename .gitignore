@@ -38,6 +38,9 @@ coverage.xml
 .dmypy.json
 dmypy.json
 
+# PostgreSQL
+PostgreSQL/
+
 # Docker
 *.log
 docker-compose.override.yml
@@ -79,6 +82,8 @@ Thumbs.db
 # Test output
 test-results/
 junit-*.xml
+logfile.txt
+logfile
 
 # Misc
 *.bak

@@ -1,0 +1,35 @@
+services:
+  api:
+    build: . # Constrói a imagem a partir do Dockerfile no diretório atual
+    container_name: vitra_api
+    ports:
+      - "8000:8000" # Mapeia a porta 8000 do host para a 8000 do contêiner da API
+    volumes:
+      - .:/app # Monta o código local no contêiner para desenvolvimento (hot-reloading com Uvicorn)
+    env_file:
+      - .env # Carrega variáveis de ambiente do arquivo .env
+    depends_on:
+      db:
+        condition: service_healthy # Espera o serviço de banco de dados estar saudável antes de iniciar a API
+    # Comando para iniciar a API e rodar o script de criação de tabelas
+    # Certifique-se que scripts/create_tables.py é idempotente (pode ser executado várias vezes sem erro)
+    # ou use uma ferramenta de migração como Alembic.
+    command: bash -c "python scripts/create_tables.py && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+
+  db:
+    image: postgres:13-alpine # Imagem oficial do PostgreSQL (escolha a versão desejada)
+    container_name: vitra_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persiste os dados do PostgreSQL
+    env_file:
+      - .env # Carrega variáveis de ambiente do arquivo .env (ex: POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB)
+    ports:
+      - "5433:5432" # Mapeia a porta 5433 do host para a 5432 do contêiner do DB (use uma porta diferente no host se a 5432 já estiver em uso)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"] # Verifica se o DB está pronto
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data: # Define o volume nomeado para persistência dos dados do DB
