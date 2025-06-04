@@ -16,6 +16,7 @@ Para rodar o projeto, você precisa ter instalado em sua máquina:
 - **GraphQL**: http://localhost:8000/graphql
 
 ### Estrutura de pastas do projeto
+```
 vitra_challenge/
 ├── app/
 │   ├── __init__.py             # Torna 'app' um pacote Python
@@ -72,4 +73,4 @@ vitra_challenge/
 ├── .gitignore                  # Especifica arquivos ignorados pelo Git
 ├── README.md                   # Documentação do projeto
 └── requirements.txt            # Dependências do projeto
-
+```
