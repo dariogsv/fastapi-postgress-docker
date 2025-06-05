@@ -2,6 +2,8 @@
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
+import sqlalchemy.exc
+import asyncpg 
 
 from app.api import deps # Importa as dependências
 from app.crud import crud # Importa os módulos
@@ -27,10 +29,25 @@ async def create_new_material(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Autor com ID {material_in.author_id} não encontrado"
         )
+    
+    try:
+        created_material = await crud.create_material_crud(db=db, material=material_in, uploader_id=current_user.id)
+        return created_material
+    except sqlalchemy.exc.IntegrityError as e:
+        if isinstance(e.orig, asyncpg.exceptions.UniqueViolationError):
+            if "materials_isbn_key" in str(e.orig).lower() or (e.orig.constraint_name and "isbn" in e.orig.constraint_name.lower()):
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT,
+                    detail="Um material com este ISBN já existe."
+                )
+            elif "materials_doi_key" in str(e.orig).lower() or (e.orig.constraint_name and "doi" in e.orig.constraint_name.lower()):
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT,
+                    detail="Um material com este DOI já existe."
+                )
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=f"Erro de integridade dos dados: {e.orig}")
 
-    return await crud.create_material_crud(db=db, material=material_in, uploader_id=current_user.id)
-
-@router.get("/", response_model=List[pydantic_schemas.Material], tags=["Materiais"])
+@router.get("/", response_model=List[pydantic_schemas.Material])
 async def read_all_materials(
     skip: int = 0,
     limit: int = 10,

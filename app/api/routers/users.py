@@ -1,6 +1,8 @@
 # app/api/routers/users.py
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
+import sqlalchemy.exc
+import asyncpg
 
 from app.crud import crud # Importa os módulos
 from app.models import models as orm_models
@@ -24,8 +26,20 @@ async def register_user(
     if db_user_by_email:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email já registrado")
 
-    created_user = await crud.create_user(db=db, user=user_in)
-    return created_user
+    try:
+        created_user = await crud.create_user(db=db, user=user_in)
+        return created_user
+    except sqlalchemy.exc.IntegrityError as e:
+        if isinstance(e.orig, asyncpg.exceptions.UniqueViolationError):
+            if "users_username_key" in str(e.orig).lower() or (e.orig.constraint_name and "username" in e.orig.constraint_name.lower()):
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT, detail="Este nome de usuário já existe."
+                )
+            elif "users_email_key" in str(e.orig).lower() or (e.orig.constraint_name and "email" in e.orig.constraint_name.lower()):
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT, detail="Este email já está registrado."
+                )
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=f"Erro de integridade dos dados ao criar usuário: {e.orig}")
 
 @router.get("/me", response_model=pydantic_schemas.User)
 async def read_users_me(

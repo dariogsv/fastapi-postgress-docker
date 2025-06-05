@@ -2,6 +2,8 @@
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
+import sqlalchemy.exc
+import asyncpg
 
 from app.api import deps # Importa as dependências
 from app.crud import crud # Importa os módulos
@@ -19,7 +21,11 @@ async def create_new_author(
     """
     Cria um novo autor. Requer autenticação.
     """
-    return await crud.create_author_crud(db=db, author=author_in)
+    try:
+        created_author = await crud.create_author_crud(db=db, author=author_in)
+        return created_author
+    except sqlalchemy.exc.IntegrityError as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=f"Erro de integridade dos dados ao criar autor: {e.orig}")
 
 @router.get("/", response_model=List[pydantic_schemas.Author])
 async def read_all_authors(
