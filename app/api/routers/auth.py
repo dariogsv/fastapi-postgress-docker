@@ -10,7 +10,7 @@ from app.api import deps
 
 router = APIRouter()
 
-@router.post("/token", response_model=pydantic_schemas.Token, tags=["Autenticação"])
+@router.post("/token", response_model=pydantic_schemas.Token)
 async def login_for_access_token(
     form_data: OAuth2PasswordRequestForm = Depends(),
     db: AsyncSession = Depends(deps.get_db_session)

@@ -10,7 +10,7 @@ from app.schemas import schemas as pydantic_schemas
 
 router = APIRouter()
 
-@router.post("/", response_model=pydantic_schemas.Material, status_code=status.HTTP_201_CREATED, tags=["Materiais"])
+@router.post("/", response_model=pydantic_schemas.Material, status_code=status.HTTP_201_CREATED)
 async def create_new_material(
     material_in: pydantic_schemas.MaterialCreate,
     db: AsyncSession = Depends(deps.get_db_session),
@@ -42,7 +42,7 @@ async def read_all_materials(
     materials = await crud.get_materials_crud(db, skip=skip, limit=limit)
     return materials
 
-@router.get("/{material_id}", response_model=pydantic_schemas.Material, tags=["Materiais"])
+@router.get("/{material_id}", response_model=pydantic_schemas.Material)
 async def read_single_material(
     material_id: int,
     db: AsyncSession = Depends(deps.get_db_session)
@@ -55,7 +55,7 @@ async def read_single_material(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Material não encontrado")
     return db_material
 
-@router.put("/{material_id}", response_model=pydantic_schemas.Material, tags=["Materiais"])
+@router.put("/{material_id}", response_model=pydantic_schemas.Material)
 async def update_existing_material(
     material_id: int,
     material_in: pydantic_schemas.MaterialUpdate,
@@ -85,7 +85,7 @@ async def update_existing_material(
     updated_material = await crud.update_material_crud(db=db, material_db_obj=db_material, material_in=material_in)
     return updated_material
 
-@router.delete("/{material_id}", response_model=pydantic_schemas.Material, tags=["Materiais"]) # Ou status_code=204 e sem response_model
+@router.delete("/{material_id}", response_model=pydantic_schemas.Material) # Ou status_code=204 e sem response_model
 async def delete_existing_material(
     material_id: int,
     db: AsyncSession = Depends(deps.get_db_session),

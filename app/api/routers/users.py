@@ -9,7 +9,7 @@ from app.api import deps # Importa as dependências
 
 router = APIRouter()
 
-@router.post("/", response_model=pydantic_schemas.User, status_code=status.HTTP_201_CREATED, tags=["Usuários"])
+@router.post("/", response_model=pydantic_schemas.User, status_code=status.HTTP_201_CREATED)
 async def register_user(
     user_in: pydantic_schemas.UserCreate,
     db: AsyncSession = Depends(deps.get_db_session)
@@ -27,7 +27,7 @@ async def register_user(
     created_user = await crud.create_user(db=db, user=user_in)
     return created_user
 
-@router.get("/me", response_model=pydantic_schemas.User, tags=["Usuários"])
+@router.get("/me", response_model=pydantic_schemas.User)
 async def read_users_me(
     current_user: orm_models.UserOrm = Depends(deps.get_current_user)
 ):
@@ -36,7 +36,7 @@ async def read_users_me(
     """
     return current_user
 
-@router.get("/", response_model=list[pydantic_schemas.User], tags=["Usuários"])
+@router.get("/", response_model=list[pydantic_schemas.User])
 async def read_all_users(
     skip: int = 0,
     limit: int = 100,

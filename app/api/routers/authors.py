@@ -10,7 +10,7 @@ from app.schemas import schemas as pydantic_schemas
 
 router = APIRouter()
 
-@router.post("/", response_model=pydantic_schemas.Author, status_code=status.HTTP_201_CREATED, tags=["Autores"])
+@router.post("/", response_model=pydantic_schemas.Author, status_code=status.HTTP_201_CREATED)
 async def create_new_author(
     author_in: pydantic_schemas.AuthorCreate,
     db: AsyncSession = Depends(deps.get_db_session),
@@ -21,7 +21,7 @@ async def create_new_author(
     """
     return await crud.create_author_crud(db=db, author=author_in)
 
-@router.get("/", response_model=List[pydantic_schemas.Author], tags=["Autores"])
+@router.get("/", response_model=List[pydantic_schemas.Author])
 async def read_all_authors(
     skip: int = 0,
     limit: int = 10,
@@ -33,7 +33,7 @@ async def read_all_authors(
     authors = await crud.get_authors_crud(db, skip=skip, limit=limit)
     return authors
 
-@router.get("/{author_id}", response_model=pydantic_schemas.Author, tags=["Autores"])
+@router.get("/{author_id}", response_model=pydantic_schemas.Author)
 async def read_single_author(
     author_id: int,
     db: AsyncSession = Depends(deps.get_db_session)
