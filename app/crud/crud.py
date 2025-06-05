@@ -51,7 +51,10 @@ async def create_material_crud(db: AsyncSession, material: schemas.MaterialCreat
     db_material = models.MaterialOrm(**material.model_dump(), uploader_id=uploader_id)
     db.add(db_material)
     await db.commit()
-    await db.refresh(db_material)
+    await db.refresh(db_material) 
+    # Carrega o autor associado ao material
+    await db.refresh(db_material, attribute_names=['author'])
+
     return db_material
 
 async def get_materials_crud(db: AsyncSession, skip: int = 0, limit: int = 10) -> List[models.MaterialOrm]:
