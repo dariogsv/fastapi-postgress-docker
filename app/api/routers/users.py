@@ -2,7 +2,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app import crud # Importa os módulos
+from app.crud import crud # Importa os módulos
 from app.models import models as orm_models
 from app.schemas import schemas as pydantic_schemas
 from app.api import deps # Importa as dependências

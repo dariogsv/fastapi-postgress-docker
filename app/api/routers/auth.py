@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app import crud
+from app.crud import crud
 from app.schemas import schemas as pydantic_schemas
 from app.core import security
 from app.api import deps 
