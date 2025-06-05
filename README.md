@@ -7,9 +7,11 @@ Para rodar o projeto, você precisa ter instalado em sua máquina:
 ### Instalação e execução
 1. Clone o repositório:    git clone https://github.com/dariogsv/vitra_challenge.git
 2. Entre na pasta do projeto: cd vitra_challenge
-3. Execute o comando para buildar a imagem Docker: docker compose -f 'docker-compose.yml' up -d --build
-3. Execute o comando para criar a imagem Docker: docker compose -f 'docker-compose.yml' -d
+3. Copie o arquivo .env.example para .env: cp .env.example .env
+4. Configure as variáveis de ambiente no arquivo .env com os valores correspondentes
+3. Execute o comando para criar e iniciar a imagem Docker: docker compose -f 'docker-compose.yml' up --build --watch
 4. Acesse a aplicação no navegador: http://localhost:8000
+5. CTRL+C para parar a execução
 
 ** Rotas disponíveis: **
 - **API REST**: http://localhost:8000/docs
