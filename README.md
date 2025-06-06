@@ -5,8 +5,8 @@ Para rodar o projeto, você precisa ter instalado em sua máquina:
 - docker
 
 ### Instalação e execução
-1. Clone o repositório:    git clone https://github.com/dariogsv/vitra_challenge.git
-2. Entre na pasta do projeto: cd vitra_challenge
+1. Clone o repositório:    git clone https://github.com/dariogsv/fastapi-postgress-docker.git
+2. Entre na pasta do projeto: cd fastapi-postgress-docker
 3. Copie o arquivo .env.example para .env: cp .env.example .env
 4. Configure as variáveis de ambiente no arquivo .env com os valores correspondentes
 3. Execute o comando para criar e iniciar a imagem Docker: docker compose -f 'docker-compose.yml' up --build --watch
