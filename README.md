@@ -19,7 +19,7 @@ Para rodar o projeto, você precisa ter instalado em sua máquina:
 
 ### Estrutura de pastas do projeto
 ```
-vitra_challenge/
+fastapi-postgress-docker/
 ├── app/
 │   ├── __init__.py             # Torna 'app' um pacote Python
 │   ├── main.py                 # Ponto de entrada da aplicação FastAPI, configuração de routers
